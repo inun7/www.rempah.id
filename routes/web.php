@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user_setor');
-});
-
+// Route::get('/', function () {
+//     return view('user_setor');
+// });
 Auth::routes();
 
-Route::get('/register', 'UserRegister@index')->name('register');
-Route::resource('/user_profil', 'UserProfil_C');
+Route::get('/', 'pages_controller@index');
+Route::get('/register', 'pages_controller@v_register');
+Route::get('/forgetpass', 'pages_controller@v_forgetpass');
+
+//user
+Route::get('/user_dashboard', 'pages_controller@vu_dashboard');
+Route::get('/user_profil', 'pages_controller@vu_profil');
+Route::get('/user_setor', 'pages_controller@vu_setor');
+
+//bank sampah
+Route::get('/bs_dataPoin', 'pages_controller@vbs_dataPoin');
+Route::get('/bs_rekapDS', 'pages_controller@vbs_rekapDS');

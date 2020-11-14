@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/user_dashboard">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="dashboard.html">
+        <a class="nav-link" href="/user_dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,8 +63,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tukar Poin:</h6>
-            <a class="collapse-item" href="buttons.html">Setor Sampah</a>
-            <a class="collapse-item" href="cards.html">Poin</a>
+            <a class="collapse-item" href="/user_setor">Setor Sampah</a>
+            <a class="collapse-item" href="#">Riwayat Setor Sampah</a>
           </div>
         </div>
       </li>
@@ -78,9 +78,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">E-Commerce:</h6>
-            <a class="collapse-item" href="utilities-color.html">Produk</a>
-            <a class="collapse-item" href="utilities-border.html">Toko Saya</a>
-            <a class="collapse-item" href="utilities-animation.html">Transaksi</a>
+            <a class="collapse-item" href="#">Produk</a>
+            <a class="collapse-item" href="#">Toko Saya</a>
+            <a class="collapse-item" href="#">Transaksi Produk</a>
           </div>
         </div>
       </li>
@@ -90,7 +90,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Keluhan</span></a>
       </li>
@@ -327,7 +327,7 @@
       <div class="modal-body">Klik "Logout" jika anda yakin untuk keluar.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="index.html">Logout</a>
+        <a class="btn btn-primary" href="/">Logout</a>
     </div>
     </div>
   </div>
