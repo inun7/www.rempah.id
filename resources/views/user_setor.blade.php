@@ -12,8 +12,12 @@
   <center>
     <br>
     <div class="container">
+      @if (session('success'))
+          {{ session('success') }}
+      @endif
+    <div class="container">
       <form action="" class="form" method="POST" enctype="multipart/form-data">
-        <!-- enctype="multipart/form-data" -->
+        @csrf
         <table class="table" border=1>
           <tr>
             <td width="10%">Foto</td>
@@ -22,6 +26,8 @@
           <tr>
             <td width="10%">Deskripsi</td>
             <td> <textarea class="form-control" name="deskripsi" rows="8" cols=""></textarea> </td>
+            <input type="hidden" name="bobot">
+            <input type="hidden" name="uang">
           </tr>
         </table>
         <input type="submit" name="add" class="btn btn-primary" value="Setor Sampah">
