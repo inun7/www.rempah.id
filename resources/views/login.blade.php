@@ -50,7 +50,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="/user_dashboard" class="btn btn-primary btn-user btn-block">
+                    <a href="/sampahs" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>
                     <hr>

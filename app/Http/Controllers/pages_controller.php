@@ -25,24 +25,24 @@ class pages_controller extends Controller
     }
 
     //USER
-    public function vu_dashboard(){
-      return view('user_dashboard');
-    }
-
     public function vu_profil(){
       return view('user_profil');
     }
 
-    public function vu_setor(){
-      return view('user_setor');
-    }
+    // public function vu_dashboard(){
+    //   return view('user_dashboard');
+    // }
+    //
+    // public function vu_setor(){
+    //   return view('user_setor');
+    // }
 
     //BANK SAMPAH
-    public function vbs_dataPoin(){
-      return view('bs_dataPoin');
-    }
-
-    public function vbs_rekapDS(){
-      return view('bs_rekapDS');
-    }
+    // public function vbs_dataPoin(){
+    //   return view('bs_dataPoin');
+    // }
+    //
+    // public function vbs_rekapDS(){
+    //   return view('bs_rekapDS');
+    // }
 }

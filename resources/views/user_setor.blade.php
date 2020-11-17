@@ -16,7 +16,7 @@
           {{ session('success') }}
       @endif
     <div class="container">
-      <form action="" class="form" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('sampahs.store') }}" class="form" method="POST" enctype="multipart/form-data">
         @csrf
         <table class="table" border=1>
           <tr>
@@ -30,7 +30,7 @@
             <input type="hidden" name="uang">
           </tr>
         </table>
-        <input type="submit" name="add" class="btn btn-primary" value="Setor Sampah">
+        <input type="submit" class="btn btn-primary" value="Setor Sampah">
         <br>
         <br>
       </form>
