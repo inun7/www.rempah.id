@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Rempah/login</title>
+  <title>Rempah</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,9 +50,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="/sampahs" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <a href="/sampahs" class="btn btn-primary btn-user btn-block">Login</a>
                     <hr>
                     <a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google

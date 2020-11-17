@@ -72,7 +72,7 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-fw fa-shopping-bag"></i>
           <span>E-Commerce</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -91,7 +91,7 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-bullhorn"></i>
           <span>Keluhan</span></a>
       </li>
 

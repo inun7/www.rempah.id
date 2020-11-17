@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Rempah - Register</title>
+  <title>Rempah</title>
 
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -61,9 +61,7 @@
                     <input type="password" class="form-control form-control-user" placeholder="Password">
                   </div>
                 </div>
-                <a href="/" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+                <a href="/" class="btn btn-primary btn-user btn-block">Register Account</a>
                 <hr>
                 <a href="#" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
