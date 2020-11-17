@@ -26,3 +26,6 @@ Route::resource('sampahs', 'SampahController');
 
 //bank sampah
 Route::resource('sampahs2', 'SampahController2');
+
+//admin
+Route::resource('sampahs3', 'SampahController3');
