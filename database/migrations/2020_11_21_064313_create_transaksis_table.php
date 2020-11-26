@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSampahsTable extends Migration
+class CreateTransaksisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateSampahsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sampahs', function (Blueprint $table) {
+        Schema::create('transaksis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('foto');
-            $table->string('deskripsi');
-            $table->integer('bobot')->nullable();
-            $table->integer('uang')->nullable();
             $table->timestamps();
-            $table->integer('id_akun')->nullable();
-            $table->integer('id_bankSampah')->nullable();
+            $table->integer('kuantitas');
+            $table->integer('id_produk')->nullable();
+            $table->integer('id_pembeli')->nullable();
         });
     }
 
@@ -32,6 +29,6 @@ class CreateSampahsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sampahs');
+        Schema::dropIfExists('transaksis');
     }
 }

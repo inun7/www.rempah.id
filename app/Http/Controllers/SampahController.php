@@ -27,7 +27,7 @@ class SampahController extends Controller
      */
     public function create()
     {
-        return view('user_setor');
+        return view('user_buat_sampah');
     }
 
     /**
@@ -38,19 +38,37 @@ class SampahController extends Controller
      */
     public function store(Request $request)
     {
-        $extension = $request->file('foto')->extension();
-        $imgname = date('dmyHis').'.'.$extension;
+      $request->validate([
+        'foto' => 'required|image|max:2048',
+        'deskripsi' => 'required'
+      ]);
 
-        $validatedData = $request->validate([
-          'foto' => 'required|file|max:5000',
-          'deskripsi' => 'required',
-        ]);
+      $foto = $request->file('foto');
+      $new_name = rand() . '.' . $foto->getClientOriginalExtension();
+      $foto->move(public_path('sampah'), $new_name);
 
-        $path = Storage::putFileAs('public/', $request->file('foto'), $imgname);
+      $form_data = array(
+        'foto'      => $new_name,
+        'deskripsi' => $request->deskripsi
+      );
 
-        $sampah = Sampah::create($validatedData);
+      Sampah::create($form_data);
 
-        return redirect('/sampahs')->with('success', 'Sampah berhasil ditambahkan');
+      return redirect('/sampahs')->with('success', 'Sampah berhasil ditambahkan!');
+
+        // $extension = $request->file('foto')->extension();
+        // $imgname = date('dmyHis').'.'.$extension;
+        //
+        // $validatedData = $request->validate([
+        //   'foto' => 'required|file|max:5000',
+        //   'deskripsi' => 'required',
+        // ]);
+        //
+        // $path = Storage::putFileAs('public/', $request->file('foto'), $imgname);
+        //
+        // $sampah = Sampah::create($validatedData);
+        //
+        // return redirect('/sampahs')->with('success', 'Sampah berhasil ditambahkan');
     }
 
     /**
@@ -72,7 +90,9 @@ class SampahController extends Controller
      */
     public function edit($id)
     {
-        //
+      $sampah = Sampah::findOrFail($id);
+
+      return view('user_edit_sampah', compact('sampah'));
     }
 
     /**
@@ -84,7 +104,40 @@ class SampahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $foto_name = $request->hidden_name;
+      $foto = $request->file('foto');
+
+      if($foto != ''){
+          $request->validate([
+            'foto'                => 'image|max:2048',
+            'deskripsi'           => ''
+          ]);
+
+          $foto_name = rand() . '.' . $foto->getClientOriginalExtension();
+          $foto->move(public_path('sampah'), $foto_name);
+      }else{
+          $request->validate([
+            'deskripsi'           => ''
+        ]);
+      }
+
+      $form_data = array(
+        'foto' => $foto_name,
+        'deskripsi' => $request->deskripsi
+      );
+
+      Sampah::whereId($id)->update($form_data);
+
+      return redirect('/sampahs')->with('success', 'Sampah berhasil diperbarui!');
+
+      // $validatedData = $request->validate([
+      //     'foto' => 'required|max:255',
+      //     'deskripsi' => 'required|max:255',
+      // ]);
+      //
+      // Sampah::whereId($id)->update($validatedData);
+      //
+      // return redirect('/sampahs')->with('success', 'Sampah berhasil diperbarui!');
     }
 
     /**

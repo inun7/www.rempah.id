@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('sampahs3.index')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('sampahs3.index')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -66,8 +66,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Akun:</h6>
-            <a class="collapse-item" href="/bs_rekapDS">Rekap Data Akun User</a>
-            <a class="collapse-item" href="/bs_rekapDS">Rekap Data Akun Bank Sampah</a>
+            <a class="collapse-item" href="#">Akun User</a>
+            <a class="collapse-item" href="#">Akun Bank Sampah</a>
           </div>
         </div>
       </li>
@@ -81,7 +81,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Keluhan:</h6>
-            <a class="collapse-item" href="/bs_dataPoin">Rekap Data Keluhan</a>
+            <a class="collapse-item" href="{{route('keluhans.index')}}">Rekap Data Keluhan</a>
           </div>
         </div>
       </li>
@@ -309,23 +309,23 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Yakin untuk keluar?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
       </div>
+      <div class="modal-body">Klik "Logout" jika anda yakin untuk keluar.</div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="/">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    </div>
     </div>
   </div>
+</div>
 
   <!-- Bootstrap core JavaScript-->
   <script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>

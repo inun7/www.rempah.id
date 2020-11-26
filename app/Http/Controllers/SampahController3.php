@@ -16,7 +16,7 @@ class SampahController3 extends Controller
     {
         $sampahs = Sampah::all();
 
-        return view('admin_rekapDS', compact('sampahs'));
+        return view('admin_rekap_sampah', compact('sampahs'));
     }
 
     /**
@@ -61,7 +61,7 @@ class SampahController3 extends Controller
     {
       $sampah = Sampah::findOrFail($id);
 
-      return view('admin_editDS', compact('sampah'));
+      return view('admin_edit_sampah', compact('sampah'));
     }
 
     /**
@@ -73,7 +73,15 @@ class SampahController3 extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+          'deskripsi' => '',
+          'bobot' => '',
+          'uang' => '',
+      ]);
+
+      Sampah::whereId($id)->update($validatedData);
+
+      return redirect('/sampahs3')->with('success', 'Data sampah berhasil diperbarui!');
     }
 
     /**

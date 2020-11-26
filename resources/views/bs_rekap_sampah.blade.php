@@ -9,17 +9,19 @@
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
       </div>
 
+      @if(session()->get('success'))
+        <div class="alert alert-success">
+          {{ session()->get('success') }}
+        </div><br/>
+      @endif
+
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Rekap Data Sampah</h6>
             </div>
             <div class="card-body">
-              @if(session()->get('success'))
-                <div class="alert alert-success">
-                  {{ session()->get('success') }}
-                </div><br/>
-              @endif
+
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -27,8 +29,8 @@
                       <th>ID</th>
                       <!-- <th>Foto</th> -->
                       <th>Deskripsi</th>
-                      <th>Bobot</th>
-                      <th>Uang</th>
+                      <th>Bobot/Kg</th>
+                      <th>Uang/Rupiah</th>
                       <th>Tanggal</th>
                       <th>Aksi</th>
                     </tr>
@@ -38,7 +40,7 @@
                     <tr>
                       <td>{{ $sampah->id }}</td>
                       <!-- <td>{{ $sampah->foto }}</td> -->
-                      <td>{{ $sampah->deskripsi }}</td>
+                      <td>{{ substr($sampah->deskripsi, 0, 20) }}</td>
                       <td>{{ $sampah->bobot }}</td>
                       <td>{{ $sampah->uang }}</td>
                       <td>{{ $sampah->created_at }}</td>

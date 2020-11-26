@@ -19,13 +19,16 @@ Auth::routes();
 Route::get('/', 'pages_controller@index');
 Route::get('/register', 'pages_controller@v_register');
 Route::get('/forgetpass', 'pages_controller@v_forgetpass');
-
-//user
 Route::get('/user_profil', 'pages_controller@vu_profil');
+
+// sampah
 Route::resource('sampahs', 'SampahController');
-
-//bank sampah
 Route::resource('sampahs2', 'SampahController2');
-
-//admin
 Route::resource('sampahs3', 'SampahController3');
+
+// keluhan
+Route::resource('keluhans', 'KeluhanController');
+
+// produk
+Route::resource('produks', 'ProdukController');
+Route::get('vu_produk_orang', 'ProdukController@vu_produk_orang');

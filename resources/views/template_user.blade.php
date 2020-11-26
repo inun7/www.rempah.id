@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/user_dashboard">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('sampahs.index')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -78,8 +78,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">E-Commerce:</h6>
-            <a class="collapse-item" href="#">Produk</a>
-            <a class="collapse-item" href="#">Toko Saya</a>
+            <a class="collapse-item" href="vu_produk_orang">Produk</a>
+            <a class="collapse-item" href="{{route('produks.index')}}">Toko & Produk Saya</a>
             <a class="collapse-item" href="#">Transaksi Produk</a>
           </div>
         </div>
@@ -90,7 +90,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('keluhans.create')}}">
           <i class="fas fa-fw fa-bullhorn"></i>
           <span>Keluhan</span></a>
       </li>
@@ -294,10 +294,10 @@
         @yield('content')
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; www.rempah.id</span>
+            <hr><span>Copyright &copy; www.rempah.id</span>
           </div>
         </div>
       </footer>
@@ -326,8 +326,8 @@
       </div>
       <div class="modal-body">Klik "Logout" jika anda yakin untuk keluar.</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
         <a class="btn btn-primary" href="/">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
     </div>
     </div>
   </div>

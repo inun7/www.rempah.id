@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use App\Sampah;
+use App\Keluhan;
 
-class SampahController2 extends Controller
+class KeluhanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class SampahController2 extends Controller
      */
     public function index()
     {
-      $sampahs = Sampah::all();
+        $keluhans = Keluhan::all();
 
-      return view('bs_rekap_sampah', compact('sampahs'));
+        return view('admin_rekap_keluhan', compact('keluhans'));
     }
 
     /**
@@ -27,7 +26,7 @@ class SampahController2 extends Controller
      */
     public function create()
     {
-        //
+        return view('user_buat_keluhan');
     }
 
     /**
@@ -38,7 +37,15 @@ class SampahController2 extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+          'judul' => 'required',
+          'keluhan' => 'required',
+        ]);
+
+        $keluhan = Keluhan::create($validatedData);
+
+        return redirect('/keluhans/create')->with('success', 'Keluhan Berhasil Dikirim!');
+
     }
 
     /**
@@ -49,7 +56,7 @@ class SampahController2 extends Controller
      */
     public function show($id)
     {
-        //
+      //
     }
 
     /**
@@ -60,9 +67,9 @@ class SampahController2 extends Controller
      */
     public function edit($id)
     {
-      $sampah = Sampah::findOrFail($id);
+      $keluhan = Keluhan::findOrFail($id);
 
-      return view('bs_verifikasi_sampah', compact('sampah'));
+      return view('admin_review_keluhan', compact('keluhan'));
     }
 
     /**
@@ -74,14 +81,7 @@ class SampahController2 extends Controller
      */
     public function update(Request $request, $id)
     {
-      $validatedData = $request->validate([
-          'bobot' => 'required|max:255',
-          'uang' => 'required|max:255',
-      ]);
-
-      Sampah::whereId($id)->update($validatedData);
-
-      return redirect('/sampahs2')->with('success', 'Sampah berhasil terverifikasi!');
+        //
     }
 
     /**

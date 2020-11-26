@@ -8,39 +8,34 @@
   </div>
 </div>
 
-<!-- Logika Tampil dan Tambah Berita -->
-  <center>
-    <br>
-    <div class="container">
-      @if (session('success'))
-          {{ session('success') }}
-      @endif
+@if(session()->get('success'))
+  <div class="alert alert-success">
+    {{ session()->get('success') }}
+  </div><br/>
+@endif
+
+    <div class="container text-center">
       <form action="{{ route('sampahs3.update', $sampah->id) }}" class="form" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <table class="table" border=1>
-          <!-- <tr>
-            <td width="10%">Foto</td>
-            <td> <input type="file" name="foto" src="{{$sampah->foto}}"> </td>
-          </tr> -->
           <tr>
             <td width="10%">Deskripsi</td>
             <td> <textarea class="form-control" name="deskripsi" rows="8" cols="">{{$sampah->deskripsi}}</textarea> </td>
           </tr>
           <tr>
-            <td width="10%">Bobot</td>
+            <td width="10%">Bobot/Kg</td>
             <td><input class="form-control" type="number" name="bobot" value="{{$sampah->bobot}}"></td>
           </tr>
           <tr>
-            <td width="10%">Uang</td>
-            <td><input type="number" name="uang" value="{{$sampah->uang}}"></td>
+            <td width="10%">Uang/Rupiah</td>
+            <td><input type="number" name="uang" value="{{$sampah->uang}}" class="form-control"></td>
           </tr>
         </table>
-        <input type="submit" class="btn btn-primary" value="Verifikasi">
-        <br>
-        <br>
+        <input type="submit" class="btn btn-primary" value="Edit" onclick="return confirm('Update data sampah ini?')">
+        <a href="{{route('sampahs3.index')}}" class="btn btn-secondary">Kembali</a>
       </form>
-  </center>
+    </div>
 <!-- end section -->
 
 @endsection
