@@ -26,7 +26,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <!-- <th>Foto</th> -->
+                  <th>Foto</th>
                   <th>Deskripsi</th>
                   <th>Bobot/Kg</th>
                   <th>Uang/Rupiah</th>
@@ -38,6 +38,7 @@
                 @foreach($sampahs as $sampah)
                 <tr>
                   <td>{{ $sampah->id }}</td>
+                  <td><img src="{{ URL::to('/')}}/sampah/{{$sampah->foto}}" class="img-thumbnail" width="75"></td>
                   <td>{{ substr($sampah->deskripsi, 0, 20) }}</td>
                   <td>{{ $sampah->bobot }}</td>
                   <td>{{ $sampah->uang }}</td>
