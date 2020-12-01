@@ -23,7 +23,7 @@
                         <p>Rp.{{$produk->harga}}</p>
                       </div>
                       <div class="blog-button">
-                        <a href="#">
+                        <a href="{{ route('produks.show', $produk->id)}}">
                           <input type="button" class="btn btn-info" value="Lihat Selengkapnya">
                         </a>
                       </div>

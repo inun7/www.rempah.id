@@ -38,7 +38,7 @@
                   <td>{{ $keluhan->judul }}</td>
                   <td>{{ substr($keluhan->keluhan, 0, 20) }}</td>
                   <td>{{ $keluhan->created_at }}</td>
-                  <td><a href="{{ route('keluhans.edit', $keluhan->id) }}" class="btn btn-warning">Rincian</a></td>
+                  <td><a href="{{ route('keluhans.show', $keluhan->id) }}" class="btn btn-warning">Rincian</a></td>
                 </tr>
                 @endforeach
               </tbody>

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Keluhan;
+use App\Produk;
+use App\Transaksi;
 
-class KeluhanController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class KeluhanController extends Controller
      */
     public function index()
     {
-        $keluhans = Keluhan::all();
-
-        return view('admin_rekap_keluhan', compact('keluhans'));
+        $transaksis = Transaksi::all();
+        return view('user_rekap_transaksi', compact('transaksis'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KeluhanController extends Controller
      */
     public function create()
     {
-        return view('user_buat_keluhan');
+        return view('user_buat_transaksi');
     }
 
     /**
@@ -37,15 +37,17 @@ class KeluhanController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-          'judul' => 'required',
-          'keluhan' => 'required',
-        ]);
+      $request->validate([
+        'kuantitas'         => 'required|numeric'
+      ]);
 
-        $keluhan = Keluhan::create($validatedData);
+      $form_data = array(
+        'kuantitas'         => $request->kuantitas
+      );
 
-        return redirect('/keluhans/create')->with('success', 'Keluhan Berhasil Dikirim!');
+      Transaksi::create($form_data);
 
+      return redirect('/transaksis/create')->with('success', 'Transaksi berhasil dibuat!');
     }
 
     /**
@@ -56,9 +58,7 @@ class KeluhanController extends Controller
      */
     public function show($id)
     {
-      $keluhan = Keluhan::findOrFail($id);
-
-      return view('admin_review_keluhan', compact('keluhan'));
+        //
     }
 
     /**
@@ -69,7 +69,7 @@ class KeluhanController extends Controller
      */
     public function edit($id)
     {
-      //
+        //
     }
 
     /**

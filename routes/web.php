@@ -32,3 +32,6 @@ Route::resource('keluhans', 'KeluhanController');
 // produk
 Route::resource('produks', 'ProdukController');
 Route::get('vu_produk_orang', 'ProdukController@vu_produk_orang');
+
+// transaksi
+Route::resource('transaksis', 'TransaksiController');

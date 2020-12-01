@@ -78,9 +78,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">E-Commerce:</h6>
-            <a class="collapse-item" href="vu_produk_orang">Produk</a>
+            <a class="collapse-item" href="/vu_produk_orang">Produk</a>
             <a class="collapse-item" href="{{route('produks.index')}}">Toko & Produk Saya</a>
-            <a class="collapse-item" href="#">Transaksi Produk</a>
+            <a class="collapse-item" href="{{route('transaksis.index')}}">Transaksi Produk</a>
           </div>
         </div>
       </li>

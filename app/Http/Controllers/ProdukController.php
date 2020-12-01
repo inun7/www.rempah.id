@@ -16,14 +16,12 @@ class ProdukController extends Controller
     public function index()
     {
         $produks = Produk::all();
-
         return view('user_toko', compact('produks'));
     }
 
     public function vu_produk_orang()
     {
       $produks = Produk::all();
-
       return view('user_produk_orang', compact('produks'));
     }
 
@@ -82,7 +80,8 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        //
+      $produk = Produk::findOrFail($id);
+      return view('user_detail_produk', compact('produk'));
     }
 
     /**

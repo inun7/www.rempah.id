@@ -16,7 +16,6 @@ class SampahController extends Controller
     public function index()
     {
         $sampahs = Sampah::all();
-
         return view('user_dashboard', compact('sampahs'));
     }
 
