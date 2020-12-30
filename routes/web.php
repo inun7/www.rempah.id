@@ -10,16 +10,26 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 // Route::get('/', function () {
-//     return view('user_setor');
+//     return view('');
 // });
-Auth::routes();
 
-Route::get('/', 'pages_controller@index');
-Route::get('/register', 'pages_controller@v_register');
-Route::get('/forgetpass', 'pages_controller@v_forgetpass');
-Route::get('/user_profil', 'pages_controller@vu_profil');
+// login dan register User
+Route::get('/', 'PagesController@index');
+Route::get('/login', 'PagesController@v_login');
+Route::get('/register', 'PagesController@v_register');
+Route::get('/forgotpassword', 'PagesController@v_forgotpassword');
+Route::post('/loginUser', 'LoginController@loginUser');
+Route::post('/loginOperator', 'LoginController@loginOperator');
+Route::post('/loginAdmin', 'LoginController@loginAdmin');
+Route::get('/logout', 'LoginController@logout');
+
+// login Operator
+Route::get('/operator', 'PagesController@indexOperator');
+
+// login Admin
+Route::get('/admin', 'PagesController@indexAdmin');
 
 // sampah
 Route::resource('sampahs', 'SampahController');
@@ -35,3 +45,20 @@ Route::get('vu_produk_orang', 'ProdukController@vu_produk_orang');
 
 // transaksi
 Route::resource('transaksis', 'TransaksiController');
+Route::get('/transaksi_keluar', 'TransaksiController@index2');
+
+// pendapatan
+Route::resource('pendapatans', 'PendapatanController');
+
+// user
+Route::resource('users', 'UserController');
+
+// operator
+Route::resource('/operators', 'OperatorController');
+
+
+
+
+
+
+

@@ -45,7 +45,7 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
-        ],
+        ], 
     ],
 
     /*
@@ -70,11 +70,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+		
+		'users' => [
+            'driver' => 'eloquent',
+            'model' => App\LoginUser::class,
+        ],
     ],
 
     /*

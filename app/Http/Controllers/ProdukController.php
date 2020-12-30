@@ -16,13 +16,13 @@ class ProdukController extends Controller
     public function index()
     {
         $produks = Produk::all();
-        return view('user_toko', compact('produks'));
+        return view('pages.user.toko', compact('produks'));
     }
 
     public function vu_produk_orang()
     {
       $produks = Produk::all();
-      return view('user_produk_orang', compact('produks'));
+      return view('pages.user.produk_orang', compact('produks'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('user_buat_produk');
+        return view('pages.user.buat_produk');
     }
 
     /**
@@ -49,8 +49,6 @@ class ProdukController extends Controller
         'deskripsi'           => 'required',
         'stok'                => 'required|numeric',
         'harga'               => 'required|numeric',
-        'jenis_bank'          => 'required',
-        'rekening_transaksi'  => 'required|numeric',
       ]);
 
       $foto = $request->file('foto');
@@ -62,9 +60,7 @@ class ProdukController extends Controller
         'foto'                => $new_name,
         'deskripsi'           => $request->deskripsi,
         'stok'                => $request->stok,
-        'harga'               => $request->harga,
-        'jenis_bank'          => $request->jenis_bank,
-        'rekening_transaksi'  => $request->rekening_transaksi
+        'harga'               => $request->harga
       );
 
       Produk::create($form_data);
@@ -81,7 +77,7 @@ class ProdukController extends Controller
     public function show($id)
     {
       $produk = Produk::findOrFail($id);
-      return view('user_detail_produk', compact('produk'));
+      return view('pages.user.detail_produk', compact('produk'));
     }
 
     /**
@@ -94,7 +90,7 @@ class ProdukController extends Controller
     {
       $produk = Produk::findOrFail($id);
 
-      return view('user_edit_produk', compact('produk'));
+      return view('pages.user.edit_produk', compact('produk'));
     }
 
     /**
@@ -115,9 +111,7 @@ class ProdukController extends Controller
             'foto'                => 'image|max:2048',
             'deskripsi'           => '',
             'stok'                => '',
-            'harga'               => '',
-            'jenis_bank'          => '',
-            'rekening_transaksi'  => ''
+            'harga'               => ''
           ]);
 
           $foto_name = rand() . '.' . $foto->getClientOriginalExtension();
@@ -127,9 +121,7 @@ class ProdukController extends Controller
             'nama_produk'         => '',
             'deskripsi'           => '',
             'stok'                => '',
-            'harga'               => '',
-            'jenis_bank'          => '',
-            'rekening_transaksi'  => ''
+            'harga'               => ''
         ]);
       }
 
@@ -139,8 +131,6 @@ class ProdukController extends Controller
         'deskripsi'          => $request->deskripsi,
         'stok'               => $request->stok,
         'harga'              => $request->harga,
-        'jenis_bank'         => $request->jenis_bank,
-        'rekening_transaksi' => $request->rekening_transaksi,
       );
 
       Produk::whereId($id)->update($form_data);

@@ -17,6 +17,8 @@ class CreateTransaksisTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('kuantitas');
+			$table->string('no_resi')->nullable();
+			$table->string('status')->nullable();
             $table->integer('id_produk')->nullable();
             $table->integer('id_pembeli')->nullable();
         });

@@ -16,7 +16,7 @@ class SampahController extends Controller
     public function index()
     {
         $sampahs = Sampah::all();
-        return view('user_dashboard', compact('sampahs'));
+        return view('pages.user.dashboard', compact('sampahs'));
     }
 
     /**
@@ -26,7 +26,7 @@ class SampahController extends Controller
      */
     public function create()
     {
-        return view('user_buat_sampah');
+        return view('pages.user.buat_sampah');
     }
 
     /**
@@ -91,7 +91,7 @@ class SampahController extends Controller
     {
       $sampah = Sampah::findOrFail($id);
 
-      return view('user_edit_sampah', compact('sampah'));
+      return view('pages.user.edit_sampah', compact('sampah'));
     }
 
     /**

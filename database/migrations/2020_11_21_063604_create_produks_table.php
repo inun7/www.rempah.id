@@ -20,8 +20,6 @@ class CreateProduksTable extends Migration
             $table->text('deskripsi');
             $table->integer('stok');
             $table->integer('harga');
-            $table->string('jenis_bank');
-            $table->string('rekening_transaksi');
             $table->timestamps();
             $table->integer('id_penjual')->nullable();
         });

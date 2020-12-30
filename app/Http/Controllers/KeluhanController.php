@@ -16,7 +16,7 @@ class KeluhanController extends Controller
     {
         $keluhans = Keluhan::all();
 
-        return view('admin_rekap_keluhan', compact('keluhans'));
+        return view('pages.admin.rekap_keluhan', compact('keluhans'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KeluhanController extends Controller
      */
     public function create()
     {
-        return view('user_buat_keluhan');
+        return view('pages.user.buat_keluhan');
     }
 
     /**
@@ -58,7 +58,7 @@ class KeluhanController extends Controller
     {
       $keluhan = Keluhan::findOrFail($id);
 
-      return view('admin_review_keluhan', compact('keluhan'));
+      return view('pages.admin.review_keluhan', compact('keluhan'));
     }
 
     /**

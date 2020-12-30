@@ -16,7 +16,13 @@ class TransaksiController extends Controller
     public function index()
     {
         $transaksis = Transaksi::all();
-        return view('user_rekap_transaksi', compact('transaksis'));
+        return view('pages.user.transaksi_masuk', compact('transaksis'));
+    }
+	
+	public function index2()
+    {
+        $transaksis = Transaksi::all();
+        return view('pages.user.transaksi_keluar', compact('transaksis'));
     }
 
     /**
@@ -26,7 +32,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('user_buat_transaksi');
+        return view('pages.user.buat_transaksi');
     }
 
     /**
@@ -69,7 +75,8 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $transaksis = Transaksi::findOrFail($id);
+        return view('pages.user.verifikasi_transaksi', compact('transaksis'));
     }
 
     /**

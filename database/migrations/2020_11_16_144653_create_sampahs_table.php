@@ -20,8 +20,7 @@ class CreateSampahsTable extends Migration
             $table->integer('bobot')->nullable();
             $table->integer('uang')->nullable();
             $table->timestamps();
-            $table->integer('id_akun')->nullable();
-            $table->integer('id_bankSampah')->nullable();
+            $table->integer('id_user')->nullable();
         });
     }
 

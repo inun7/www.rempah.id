@@ -17,7 +17,7 @@ class SampahController2 extends Controller
     {
       $sampahs = Sampah::all();
 
-      return view('bs_rekap_sampah', compact('sampahs'));
+      return view('pages.operator.rekap_sampah', compact('sampahs'));
     }
 
     /**
@@ -62,7 +62,7 @@ class SampahController2 extends Controller
     {
       $sampah = Sampah::findOrFail($id);
 
-      return view('bs_verifikasi_sampah', compact('sampah'));
+      return view('pages.operator.verifikasi_sampah', compact('sampah'));
     }
 
     /**
